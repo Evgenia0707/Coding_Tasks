@@ -3,10 +3,14 @@ package week6;
 public class PasswordValidation {
     public static void main(String[] args) {
 
-
+        String pass = "1369878@gmail.com";
+        String pass1 = "Ab%n5m@gmail.com";
+        System.out.println(passwordIsValid(pass));
+        System.out.println(passwordIsValid(pass1));
 
 
     }
+
     public static boolean passwordIsValid(String password) {
 
         boolean hasLowerCaseChar = password.matches("(.*[a-z].*)"),
@@ -14,7 +18,7 @@ public class PasswordValidation {
                 hasDigits = password.matches("(.*[0-9].*)"),
                 hasSpecialChar = password.matches("(.*[ -/, :-@].*)");
 
-        if(password.length() >= 6 && !password.contains(" ")) {
+        if (password.length() >= 6 && !password.contains(" ")) {
             if (hasLowerCaseChar && hasUpperCaseChar && hasDigits && hasSpecialChar) {
                 return true;
             }
@@ -22,8 +26,6 @@ public class PasswordValidation {
 
         return false;
     }
-
-
 }
 /*
 1. Write a return method that can verify if a password is valid or not.
